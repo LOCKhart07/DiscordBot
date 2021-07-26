@@ -16,7 +16,7 @@ async def on_ready():
     print("Bot is Ulala")
 
 
-status = cycle(['Watching Hentai','Wtaching more hentao','Not watching hentai'])
+status = cycle(['Watching Anime','Watching more Anime','Not watching Anime'])
 
 @tasks.loop(seconds=3)
 async def change_status():
@@ -25,26 +25,26 @@ async def change_status():
 
 @client.event
 async def on_member_join(member):
-    print(f'{member} has jhoined a server')
+    print(f'{member} has joined a server')
 
 @client.event
 async def on_member_remove(member):
-    print(f'{member} has leftt a sever')
+    print(f'{member} has left a sever')
 
 @client.command()
 async def ulala(ctx):
-    await ctx.send(f'Fuck Off and yi tuyi ping :{round(client.latency *1000)}ms')
+    await ctx.send(f'Thats your ping mate :{round(client.latency *1000)}ms')
 
-@client.command(aliases=['badeball','8ball'])
+@client.command(aliases=['eightball','8ball'])
 async def bade_ball(ctx, *,question):
-    responses =['Nai', 'Ha', 'Udya', 'Kal ana']
+    responses =['Nai', 'Ha', 'Udya', 'Kal ana', 'NHK']
     await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
 
 @client.command()
 async def nikal(ctx, amount=5):
     await ctx.channel.purge(limit=amount+1)
     print(ctx.author)
-    await ctx.send(f'@{ctx.author} zun kadla')
+    await ctx.send(f'@{ctx.author} has removed these messages')
     # await ctx.send(f'yaa {ctx.message.author.mention()} zun {amount} message kadle')
 
 @client.command()
@@ -71,4 +71,4 @@ async def unban(ctx, *, member):
 
 
 
-client.run('ODMwNzg1NjYxODk5NTA1NzA0.YHLvcQ.uLwn6xk_QBxa_24pWocjEOdsGt8')
+client.run('client key')
